@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+
+  tornado-backend:
+    build: ./tornado-backend
+    command: --db_host=postgres
+    depends_on:
+      - postgres
+    expose:
+      - "8888"
+    restart: unless-stopped
+    networks:
+      blog-demo-01-net:
+      nginx-net:
+        aliases:
+          - blog-demo-01-backend
+
+  postgres:
+    image: postgres:10.3
+    environment:
+      POSTGRES_USER: blog
+      POSTGRES_PASSWORD: blog
+      POSTGRES_DB: blog
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data:rw
+    restart: unless-stopped
+    networks:
+      - blog-demo-01-net
+
+networks:
+  blog-demo-01-net:
+    driver: bridge
+
+  nginx-net:
+    external: true

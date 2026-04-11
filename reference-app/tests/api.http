@@ -1,0 +1,65 @@
+### 1) GET xsrf cookie from Tornado
+GET http://localhost:8888/api/xsrf-token
+
+> {% client.log("COOKIES:", response.cookies); %}
+> {% client.cookies.setAll(response.cookies); %}
+> {% client.log("AFTER SET:", client.cookies.getAll()); %}
+> {% client.global.set("xsrf", response.cookies._xsrf?.value); %}
+
+
+
+
+
+### 2) Login
+POST http://localhost:8888/api/login
+Content-Type: application/json
+X-XSRFToken: {{xsrf}}
+
+{
+  "email": "first-blogger@blog.com",
+  "password": "blogger-01"
+}
+
+> {% client.cookies.setAll(response.cookies); %}
+> {% client.global.set("xsrf", response.cookies._xsrf.value); %}
+
+
+
+
+
+
+
+### 1) Register new author
+POST http://localhost:8888/api/register
+Content-Type: application/json
+X-XSRFToken: {{xsrf}}
+
+{
+  "email": "first-blogger@blog.com",
+  "name": "First Blogger",
+  "password": "blogger-01"
+}
+
+
+### 3) Authenticated request → use the NEW xsrf token
+GET http://localhost:8888/api/get-user-role
+X-XSRFToken: {{xsrf}}
+
+
+
+### Test cookies being sent automatically
+GET http://localhost:8888/api/get-user-role
+
+> {% console.log("Sent cookies:", request.cookies); %}
+
+
+
+### 4) Create blog entry (requires correct xsrf + login)
+POST http://localhost:8888/api/create-blog-entry
+Content-Type: application/json
+X-XSRFToken: {{xsrf}}
+
+{
+  "title": "My REST Client Post",
+  "markdown": "## Hello World!"
+}

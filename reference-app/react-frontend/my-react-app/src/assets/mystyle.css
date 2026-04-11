@@ -1,0 +1,186 @@
+
+/* include/exclude header */
+.header-01-cl {
+  display: block;
+}
+
+/* include/exclude footer */
+.footer-01-cl {
+  display: block;
+}
+
+/* include/exclude link to github start */
+.footer-github-cl {
+  display: block;
+}
+
+/* include/exclude link to ilias start */
+.footer-ilias-cl {
+  display: none;
+}
+
+/* include/exclude access to github */
+.access-ilias-cl {
+  display: block;
+}
+
+/* include/exclude access to ilias */
+.access-ilias-cl {
+  display: none;
+}
+
+body {
+  font-family: "Helvetica", sans-serif; 
+  font-size: 14pt;
+  font-weight: 400;
+}
+
+/* Override Bootstrap's paragraph font-weight */
+.container p {
+  font-weight: 400;
+  font-size: 14pt;
+}
+
+.container ul {
+  font-weight: 400;
+  font-size: 14pt;
+}
+
+.container ol {
+  font-weight: 400;
+  font-size: 14pt;
+}
+
+.logo-cl {
+  background-color: rgba(246, 248, 242, 0.9);
+  color: #23452b;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 24pt;
+}
+
+.bg-plant-green {
+  background-color: #2f6b2f !important;
+}
+
+.btn-plant-green {
+  background-color: #2f6b2f !important;
+  border-color: #2f6b2f !important;
+  color: #fff !important;
+}
+
+.btn-plant-green:hover,
+.btn-plant-green:focus,
+.btn-plant-green:active {
+  background-color: #245524 !important;
+  border-color: #245524 !important;
+  color: #fff !important;
+}
+
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-nav .btn-link.nav-link {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .btn-link.nav-link:hover {
+  color: #eaf5e6 !important;
+}
+
+/* collapsible button */
+.coll-button-cl {
+  margin-top: 5px;
+  margin-bottom: 5px; 
+  background-color: white;
+  color: #333333;
+  font-style: italic;
+  cursor: pointer;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid;
+  border-color: #cccccc;
+  text-align: left;
+  outline: none;
+  font-family: Helvetica;
+  font-size: 16pt;
+}
+
+/* collapsible content */
+.coll-content-cl {
+  display: none;
+  background-color: #ffffff;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+}
+
+/* style the buttons that are used to open the tab content */
+.tab-link-l1-cl {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 14px 16px;
+  background-color: #f1f1f1;
+}
+
+/* change background color of buttons on hover */
+.tab-link-l1-cl:hover {
+  background-color: #ddd;
+}
+
+/* create an active/current tablink class */
+.tab-link-l1cl.active {
+  background-color: #ccc;
+}
+
+/* buttons used to animate the parameters */
+.animate-button-cl {
+  display: inline-table;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px 4px 1px 4px;
+  background-color: #f1f1f1;
+}
+
+.animate-button-cl:hover {
+  background-color: #ddd;
+}
+
+/* buttons that are used to explain the figures */
+.explain-button-cl {
+  display: inline-table;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px 4px 1px 4px;
+  background-color: #f1f1f1;
+}
+
+.explain-button-cl:hover {
+  background-color: #ddd;
+}
+
+/* horizontal width of slider */
+.slider.slider-horizontal {
+  width:100%; 
+}
+
+.inner-jumb-cl {
+  background-color: #ffffff;
+}
+
+.container .jumbotron .audio-show-text-cl {
+  background-color: #eee;
+  padding: 5px 5px 5px 5px;
+}
+
+/* add css */
+.custom-quill .ql-editor {
+  min-height: 200px; /* Adjust this to your desired height */
+}
+
+.error-message {
+  color: red;
+}

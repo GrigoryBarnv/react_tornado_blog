@@ -1,0 +1,20 @@
+// custom.scss
+
+// see: https://getbootstrap.com/docs/5.0/customize/sass/
+
+// Import Bootstrap's functions and variables
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
+
+$hoh-blue: #003F75;
+
+// Create your own map
+$hoh-blue: (
+  "hoh-blue": $hoh-blue
+);
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $hoh-blue);
+
+// Import the rest of Bootstrap
+@import '../../node_modules/bootstrap/scss/bootstrap';
